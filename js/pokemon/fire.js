@@ -42,6 +42,7 @@ class FireType extends Pokemon {
                 msg = `${evolutions[0]} is evolving into ${evolutions[1]}.`;
                 console.log(msg);
                 msg = `${evolutions[0]} evolved into ${evolutions[1]}.`;
+                this.name = this.forms[1];
                 console.log(msg);
                 return msg;
             case (evolutions[1]):
@@ -49,6 +50,7 @@ class FireType extends Pokemon {
                 msg = `${evolutions[1]} is evolving into ${evolutions[2]}.`;
                 console.log(msg);
                 msg = `${evolutions[1]} evolved into ${evolutions[2]}.`;
+                this.name = this.forms[2];
                 console.log(msg);
                 return msg;
             case (evolutions[2]):

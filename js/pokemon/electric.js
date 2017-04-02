@@ -9,13 +9,14 @@ class ElectricType extends Pokemon {
 
     evolve(currentForm) {
         let evolutions = this.forms;
-        console.log(`This pokemon is a ${currentForm}`);
+        console.log(`This pokemon is a ${currentForm}.`);
         let message = '';
         switch (currentForm) {
             case (evolutions[0]):
                 // Console Log evolving message and return message
                 message = `${evolutions[0]} is evolving into ${evolutions[1]}.`;
                 console.log(message);
+                this.name = this.forms[1];
                 message = `${evolutions[0]} evolved into ${evolutions[1]}.`;
                 console.log(message);
                 return message;

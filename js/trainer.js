@@ -4,6 +4,16 @@ class Trainer {
         this.myPokemon = [];
     }
 
+    getIndex(pokemonID) {
+      let index;
+      for (var i = 0; i < this.myPokemon.length; i++) {
+        if (pokemonID == this.myPokemon[i]._pokeNumber) {
+          index = i;
+        }    
+      }
+      return index;
+    }
+
     about() {
         return `Hi. I'm ${this.name}.`;
     }

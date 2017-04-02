@@ -13,7 +13,7 @@
 
     const currentPlayer = new Trainer();
     console.log(currentPlayer.about());
-    welcome.innerHTML = `<div class="error" style="visibility:visible"><h2 style="color:#ffffff">Good Luck Trainers</h2><p style="padding-top:.5rem; color:#ffffff">You are allowed to catch 6 pokemon.</p></div>`;
+    welcome.innerHTML = `<div><h2 style="color:#ffffff">Good Luck Trainers</h2><p style="padding-top:.5rem; color:#ffffff">You are allowed to catch 6 pokemon.</p></div>`;
     setTimeout(()=> {
       welcome.innerHTML = '';
       welcome.remove();
@@ -39,23 +39,30 @@
                     pokemonAppears.style.visibility = "hidden";
                     let evolvePressed = document.getElementById('evolvePokemon');
                     let sendtoProfessor = document.getElementById('sendtoProfessor');
+                    //////////////// EVOLVE
                     if(evolvePressed) {
                       evolvePressed.addEventListener('click',(e)=>{
                         e.preventDefault();
-                        console.log('User pressed evolve.')
+                        console.log('User pressed evolve.');
+                        let idx = currentPlayer.getIndex(e.srcElement.closest('article').getAttribute('data-pokeNumber'));
+                        console.log(idx);
+                        currentPlayer.myPokemon[idx].evolve(currentPlayer.myPokemon[idx].name);
+                        console.log(`///////////// Start HERE`);
+                        console.log(currentPlayer.myPokemon);
                       });
                     }
+                    //////////////// Send To Professor
                     if(sendtoProfessor) {
                       sendtoProfessor.addEventListener('click', (e)=> {
                         e.preventDefault();
                         console.log(`User pressed send to professor.`);
-                        console.log(`///////////// Start HERE`);
                         console.log(`${currentPlayer.myPokemon.length} in myPokemon.`)
                         let pokemonNumb = e.srcElement.closest('article').getAttribute('data-pokeNumber');
                         currentPlayer.myPokemon = currentPlayer.myPokemon.filter((e) => {
                            return  !e._pokeNumber == pokemonNumb;
                         });
                         console.log(`After removal, ${currentPlayer.myPokemon.length} in myPokemon.`)
+                        console.log(currentPlayer.myPokemon);
                       })
                     }
                     bag.innerHTML = `<h2>Your Bag</h2><div class="count" id="jsBagCount"></div>`;
