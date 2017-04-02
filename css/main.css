@@ -118,7 +118,10 @@ button {
   -ms-flex-pack: justify;
       justify-content: space-between; }
 
-.appear, .error {
+.b {
+  font-weight: bold; }
+
+.appear, .error, .welcome {
   background-color: #FFBA49;
   margin: 1rem;
   padding: 1rem;

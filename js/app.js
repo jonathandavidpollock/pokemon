@@ -9,11 +9,15 @@
     let submit = document.getElementById('catchPokemon');
     let nickName = document.getElementById('name');
     let error = document.getElementById('error');
+    let welcome = document.getElementById('welcome');
 
     const currentPlayer = new Trainer();
     console.log(currentPlayer.about());
-    bag.innerHTML = `<div class="error" style="visibility:visible"><h2 style="color:#ffffff">Good Luck Trainers</h2><p style="padding-top:.5rem; color:#ffffff">You are allowed to catch 6 pokemon.</p></div>`;
-    setTimeout(()=>bag.innerHTML = '', 4000);
+    welcome.innerHTML = `<div class="error" style="visibility:visible"><h2 style="color:#ffffff">Good Luck Trainers</h2><p style="padding-top:.5rem; color:#ffffff">You are allowed to catch 6 pokemon.</p></div>`;
+    setTimeout(()=> {
+      welcome.innerHTML = '';
+      welcome.remove();
+    }, 4000);
 
     Appear();
 
@@ -45,11 +49,18 @@
                       sendtoProfessor.addEventListener('click', (e)=> {
                         e.preventDefault();
                         console.log(`User pressed send to professor.`);
+                        console.log(`///////////// Start HERE`);
+                        console.log(`${currentPlayer.myPokemon.length} in myPokemon.`)
+                        let pokemonNumb = e.srcElement.closest('article').getAttribute('data-pokeNumber');
+                        currentPlayer.myPokemon = currentPlayer.myPokemon.filter((e) => {
+                           return  !e._pokeNumber == pokemonNumb;
+                        });
+                        console.log(`After removal, ${currentPlayer.myPokemon.length} in myPokemon.`)
                       })
                     }
                     bag.innerHTML = `<h2>Your Bag</h2><div class="count" id="jsBagCount"></div>`;
                     let bagCount = document.getElementById('jsBagCount');
-                    bagCount.innerHTML = `${currentPlayer.myPokemon.length} / 6`;
+                    bagCount.innerHTML = `${currentPlayer.myPokemon.length} <span class="b">/ 6</span>`;
                     setTimeout(()=>pokemonAppears.style.visibility = "visible", Utility.randomNumber()*1000);
                     Appear();
                 } else {
@@ -60,5 +71,6 @@
             }
         });
     }
+
 
 })();

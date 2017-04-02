@@ -32,7 +32,7 @@ class Trainer {
         if (!this.myPokemon == [] || !this.myPokemon == null) {
             for (var i = 0; i < myPokemon.length; i++) {
                 pokemonElement += `
-                    <article class="wrapPokemon">
+                    <article class="wrapPokemon" data-pokeNumber="${myPokemon[i]._pokeNumber}">
                       <div class="poketext">
                         <h2>${myPokemon[i].nickName}</h2>
                         <p>${myPokemon[i].aboutPokemon()}</p>
