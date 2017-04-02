@@ -1,0 +1,136 @@
+/* CSS RESET
+==================================================================================================== 
+====================================================================================================
+*/
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700,900");
+html, body, div, main, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, button,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, textarea,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,
+::before, ::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  box-sizing: border-box; }
+
+/* HTML5 - Older browser support
+====================================================================== */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* BODY
+====================================================================== */
+body {
+  line-height: 1; }
+
+/* LISTS - Clear bullets
+====================================================================== */
+ol, ul {
+  list-style: none; }
+
+/* QUOTES
+====================================================================== */
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* TABLES
+====================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 2rem;
+  background-color: #F0F0F0;
+  font-family: 'PT Sans', sans-serif; }
+
+section {
+  padding: 1rem; }
+
+.wrapper {
+  max-width: 750px;
+  margin: auto; }
+
+header {
+  background-color: #FFFFFF;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #D6D6D6;
+  margin-bottom: 2.4rem; }
+
+h2, .count {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FF5A60; }
+
+.count {
+  font-weight: 400; }
+
+.bag {
+  margin-top: 3rem; }
+
+label {
+  font-size: 2.4rem; }
+
+form, article {
+  border: 2px solid #D6D6D6;
+  padding: 2rem 1rem; }
+
+article {
+  margin-bottom: 2rem; }
+
+article h2 {
+  padding-bottom: .5rem; }
+
+button {
+  text-align: center;
+  background-color: #FF5A60;
+  padding: 1.5rem 2rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-top: 2rem; }
+
+.bag {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.appear {
+  background-image: url("../assets/information.svg") center center no-repeat;
+  background-size: 10px;
+  background-color: #FFBA49;
+  margin: 1rem;
+  padding: 1rem;
+  color: #2D3142;
+  border-left: 10px solid #2D3142; }
+
+input {
+  width: 100%;
+  border: 1px solid #D6D6D6;
+  height: 60px;
+  font-size: 3rem; }
+  input:focus {
+    border-color: 02394A; }

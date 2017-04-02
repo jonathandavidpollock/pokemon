@@ -1,2 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700,900');
+
 html {font-size:62.5%;}
-body {font-size:1.6rem;}
+body {
+  font-size:2rem;
+  background-color:$grey;
+  font-family: 'PT Sans', sans-serif;
+}
+
+section {
+  padding:1rem;
+}
+
+.wrapper {
+  max-width: 750px;
+  margin:auto;
+}
+
+header {
+  background-color: $white;
+  padding:2rem 1rem;
+  text-align:center;
+  border-bottom: 1px solid $borderColor;
+  margin-bottom:2.4rem;
+}
+
+h2, .count {
+  font-size:3rem;
+  font-weight:bold;
+  color:$pc;
+}
+
+.count {font-weight: 400;}
+.bag { margin-top:3rem;}
+
+
+label {
+  font-size:2.4rem;
+}
+form, article {
+  border:2px solid $borderColor;
+  padding:2rem 1rem;
+}
+
+article {margin-bottom:2rem;}
+
+article h2 {
+  padding-bottom:.5rem;
+}
+
+button {
+  text-align:center;
+  background-color:$pc;
+  padding: 1.5rem 2rem;
+  font-weight:bold;
+  color:$white;
+  margin-top:2rem;
+}
+
+
+.bag {
+  display:flex;
+  justify-content: space-between;
+}
+
+.appear {
+  background-image: url('../assets/information.svg') center center no-repeat;
+  background-size: 10px;
+  background-color:$CTA;
+  margin:1rem;
+  padding:1rem;
+  color:#2D3142;
+  border-left: 10px solid #2D3142;
+}
+
+input {
+  width:100%;
+  border: 1px solid $borderColor;
+  height:60px;
+  font-size:3rem;
+  &:focus {
+    border-color:02394A;
+  }
+}

@@ -1,8 +1,7 @@
-class Trainer(name = "Ash Katchum") {
-  constructor() {
+class Trainer {
+  constructor(name = "Ash Katchum") {
     this.name = name;
     this.myPokemon = [];
-    console.log(about());
   }
 
   about() {
@@ -25,7 +24,7 @@ class Trainer(name = "Ash Katchum") {
   }
 
   displayPokemon() {
-    if (!this.myPokemon == [] or !this.myPokemon == null) {
+    if (!this.myPokemon == [] || !this.myPokemon == null) {
 
       this.myPokemon.foreach((pokemon)=>{
         let pokemonElement = `
