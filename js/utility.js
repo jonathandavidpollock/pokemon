@@ -3,9 +3,14 @@ class Utility {
 
   }
 
+  static randomNumber() {return ~~((Math.random()*4)+1);}
+
+  static toTitleCase(str){
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  }
+
   static randomPokemon() {
-    let randomNumber = ~~((Math.random()*5)+1);
-    console.log(randomNumber);
+    let randomNumber = ~~((Math.random()*4)+1);
     switch(randomNumber) {
       case 1:
         return new GrassType();

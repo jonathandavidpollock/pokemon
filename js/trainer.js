@@ -1,48 +1,64 @@
 class Trainer {
-  constructor(name = "Ash Katchum") {
-    this.name = name;
-    this.myPokemon = [];
-  }
-
-  about() {
-    return `Hi. I'm ${this.name}.`;
-  }
-
-  addPokemon(id, type) {
-    if (this.myPokemon.count > 6) {
-      // Add Pokemon to Array
-      console.log(`Attempting to add ${this.type} Pokemon.`)
-    } else {
-      // Do not add Pokemon and throw error
-      console.log(`Can not add another Pokemon. You can only carry six pokemon.`);
+    constructor(name = "Ash Katchum") {
+        this.name = name;
+        this.myPokemon = [];
     }
-  }
 
-  removePokemon(pokemon) {
-    // Remove Pokemon
-    console.log(`Attempting to remove ${pokemon.name}`);
-  }
-
-  displayPokemon() {
-    if (!this.myPokemon == [] || !this.myPokemon == null) {
-
-      this.myPokemon.foreach((pokemon)=>{
-        let pokemonElement = `
-        <article class="wrapPokemon">
-          <div class="poketext">
-            <h2>${pokemon.nickName}</h2>
-            <p>${pokemon.aboutPokemon()}</p>
-          </div>
-          <div class="pokeButton">
-            <button id="evolvePokemon">Evolve</button>
-            <button id="sendtoProfessor">Send to Professor</button>
-          </div>
-        <article>
-        `
-      });
-    } else {
-      console.log(`${this.name} has no pokemon to display.`);
+    about() {
+        return `Hi. I'm ${this.name}.`;
     }
-  }
+
+    addPokemon(pokemon) {
+        if (this.myPokemon.length < 6) {
+            // Add Pokemon to Array
+            console.log(`Attempting to add Pokemon.`)
+            this.myPokemon.push(pokemon);
+            console.log(this.myPokemon);
+            console.log(`${this.myPokemon.length} pokemon in your bag.`);
+            return true;
+        } else {
+            // Do not add Pokemon and throw error
+            console.log(this.myPokemon);
+            console.log(`Can not add another Pokemon. You can only carry six pokemon.`);
+            return false;
+        }
+    }
+
+    displayPokemon() {
+        console.log(`Inside display pokemon.`);
+        console.log(this.myPokemon);
+        var pokemonElement = ``;
+        var myPokemon = this.myPokemon;
+        if (!this.myPokemon == [] || !this.myPokemon == null) {
+            for (var i = 0; i < myPokemon.length; i++) {
+                pokemonElement += `
+                    <article class="wrapPokemon">
+                      <div class="poketext">
+                        <h2>${myPokemon[i].nickName}</h2>
+                        <p>${myPokemon[i].aboutPokemon()}</p>
+                      </div>
+                      <div class="pokeButton">
+                        <button id="evolvePokemon">Evolve</button>
+                        <button id="sendtoProfessor">Send to Professor</button>
+                      </div>
+                    </article>
+                    `;
+                // Display Pokemon
+
+                console.log(pokemonElement);
+                return pokemonElement;
+            }
+        } else {
+            console.log(`${this.name} has no pokemon to display.`);
+            return null;
+        }
+    }
+
+    removePokemon(pokemon) {
+        // Remove Pokemon
+        console.log(`Attempting to remove ${pokemon.name}`);
+    }
+
+
 
 }

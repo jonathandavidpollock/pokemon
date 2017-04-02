@@ -118,16 +118,22 @@ button {
   -ms-flex-pack: justify;
       justify-content: space-between; }
 
-.appear {
-  background-image: url("../assets/information.svg") center center no-repeat;
-  background-size: 10px;
+.appear, .error {
   background-color: #FFBA49;
   margin: 1rem;
   padding: 1rem;
   color: #2D3142;
   border-left: 10px solid #2D3142; }
 
+.error {
+  background-color: #BC4B51;
+  visibility: hidden; }
+
+.center {
+  text-align: center; }
+
 input {
+  padding-left: .75rem;
   width: 100%;
   border: 1px solid #D6D6D6;
   height: 60px;

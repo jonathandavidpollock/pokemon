@@ -63,9 +63,7 @@ button {
   justify-content: space-between;
 }
 
-.appear {
-  background-image: url('../assets/information.svg') center center no-repeat;
-  background-size: 10px;
+.appear, .error {
   background-color:$CTA;
   margin:1rem;
   padding:1rem;
@@ -73,7 +71,17 @@ button {
   border-left: 10px solid #2D3142;
 }
 
+.error {
+  background-color: $error;
+  visibility: hidden;
+}
+
+.center {
+  text-align: center;
+}
+
 input {
+  padding-left:.75rem;
   width:100%;
   border: 1px solid $borderColor;
   height:60px;

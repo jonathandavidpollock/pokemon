@@ -1,5 +1,5 @@
 class Pokemon {
-  constructor(caught=false, dv, av) {
+  constructor(caught=false, dv=10, av=10) {
     console.log("Instantiated a Pokemon.")
     this.caught = caught;
     this._defendValue = dv;
