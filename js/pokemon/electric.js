@@ -33,10 +33,8 @@ class ElectricType extends Pokemon {
     }
 
     canEvolve(currentForm) {
-        console.log(`///////////////// START HERE`)
         let evolutions = this.forms;
         console.log(`This pokemon is a ${currentForm}`);
-        console.log(`///////////////// END HERE`)
         let message = '';
         switch (currentForm) {
             case (evolutions[0]):

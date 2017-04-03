@@ -2,7 +2,8 @@ class Pokeball {
   constructor() {
     this.containsPokemon = false;
     this.pokemonName = "No pokemon inside at this time.";
-    this.pokeballNumber = generateUniqueNumber();
+    this.pokeballNumber = Utility.generateUniqueNumber();
+
   }
 
   addPokemon(pokemon) {

@@ -2,6 +2,7 @@ class Trainer {
     constructor(name = "Ash Katchum") {
         this.name = name;
         this.myPokemon = [];
+        this.myPokeballs = [];
     }
 
     getIndex(pokemonID) {
@@ -9,7 +10,7 @@ class Trainer {
       for (var i = 0; i < this.myPokemon.length; i++) {
         if (pokemonID == this.myPokemon[i]._pokeNumber) {
           index = i;
-        }    
+        }
       }
       return index;
     }
